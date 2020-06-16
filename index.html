@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <div class="container">
+    привет
+    <h1>Responsive Video.js Example (v4.3)</h1>
+    <p></p>
+    <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" data-setup='{ "asdf": true }'
+      poster="http://video-js.zencoder.com/oceans-clip.png">
+      <source src="#assets/Roche_согласование5.mp4" type='video/mp4'>
+      <!-- <source src="https://vjs.zencdn.net/v/oceans.webm" type='video/webm'> -->
+    </video>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <!-- videojs -->
+  <script>
+    videojs.autoSetup();
+
+    videojs('my_video_1').ready(function(){
+    console.log(this.options()); //log all of the default videojs options
+
+    // Store the video object
+    var myPlayer = this, id = myPlayer.id();
+    // Make up an aspect ratio
+    var aspectRatio = 264/640;
+
+    function resizeVideoJS(){
+    var width = document.getElementById(id).parentElement.offsetWidth;
+    myPlayer.width(width).height( width * aspectRatio );
+
+    }
+
+    // Initialize resizeVideoJS()
+    resizeVideoJS();
+    // Then on resize call resizeVideoJS()
+    window.onresize = resizeVideoJS;
+    });
+  </script>  
+</body>
+
+</html>
