@@ -9,8 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-  <title>Hello, world!</title>
+  <title>Test</title>
+  <script type="text/javascript" src="js/jquery.ydisk.min.js"></script>
 </head>
 
 <body>
@@ -20,9 +20,15 @@
     <p></p>
     <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" data-setup='{ "asdf": true }'
       poster="http://video-js.zencoder.com/oceans-clip.png">
-      <source src="#assets/Roche_согласование5.mp4" type='video/mp4'>
+      <source
+        src="#assets/Roche_5.mp4"
+        type='video/mp4'>
       <!-- <source src="https://vjs.zencdn.net/v/oceans.webm" type='video/webm'> -->
     </video>
+
+
+    <a class="ydisk-example-1" href="https://yadi.sk/i/FM8PMtzrpgYcp" target="_blank">Публичная ссылка на файла с Яндекс
+      Диска</a>
   </div>
 
   <!-- Optional JavaScript -->
@@ -40,26 +46,34 @@
   <script>
     videojs.autoSetup();
 
-    videojs('my_video_1').ready(function(){
-    console.log(this.options()); //log all of the default videojs options
+    videojs('my_video_1').ready(function () {
+      console.log(this.options()); //log all of the default videojs options
 
-    // Store the video object
-    var myPlayer = this, id = myPlayer.id();
-    // Make up an aspect ratio
-    var aspectRatio = 264/640;
+      // Store the video object
+      var myPlayer = this,
+        id = myPlayer.id();
+      // Make up an aspect ratio
+      var aspectRatio = 264 / 640;
 
-    function resizeVideoJS(){
-    var width = document.getElementById(id).parentElement.offsetWidth;
-    myPlayer.width(width).height( width * aspectRatio );
+      function resizeVideoJS() {
+        var width = document.getElementById(id).parentElement.offsetWidth;
+        myPlayer.width(width).height(width * aspectRatio);
 
-    }
+      }
 
-    // Initialize resizeVideoJS()
-    resizeVideoJS();
-    // Then on resize call resizeVideoJS()
-    window.onresize = resizeVideoJS;
+      // Initialize resizeVideoJS()
+      resizeVideoJS();
+      // Then on resize call resizeVideoJS()
+      window.onresize = resizeVideoJS;
     });
-  </script>  
+  </script>
+  <!-- yandex video -->
+  <script>
+    $(document).ready(function () {
+      // Применение плагина к ссылке с классом ydisk-example-1
+      $("a.ydisk-example-1").ydisk();
+    });
+  </script>
 </body>
 
 </html>
