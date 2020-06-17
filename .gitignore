@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # vscode
 .vscode/
 
+# gitignor
+.gitignor
+
