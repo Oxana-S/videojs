@@ -361,4 +361,7 @@ FodyWeavers.xsd
 
 # git
 .git/
- 
+
+# vscode
+.vscode/
+
