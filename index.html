@@ -51,23 +51,25 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 40%;
       height: 100%;
       transform: translateX(-85px);
       animation-name: flash-md;
-      animation-duration: 3s;
+      /* animation-duration: 3s; */
       animation-iteration-count: infinite;
+
+      /* background-color: rgb(236, 127, 26); */
     }
 
     @keyframes flash-md {
       30% {
         -webkit-transform: translateX(100%);
-        transform: translateX(100%);
+        transform: translateX(240%);
       }
 
       100% {
         -webkit-transform: translateX(100%);
-        transform: translateX(100%);
+        transform: translateX(240%);
       }
     }
 
@@ -94,12 +96,29 @@
         max-width: 250px;
         font-size: 16px;
       }
+
+      .btn__effects {
+        animation-duration: 3s
+      }
     }
 
     @media (min-width: 768px) {
       #my-video {
         max-width: 640px;
         max-height: 360px;
+      }
+
+      .wrapper__btn {
+        height: 60px;
+        max-width: 400px;
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #my-video {
+        max-width: 780px;
+        max-height: 440px;
       }
 
       .wrapper__btn {
@@ -116,9 +135,9 @@
 <body>
   <div class="container" id="main">
     <div class="row">
-      <div class="col">
-        <video id="my-video" class="video-js" controls autoplay preload="auto" poster="MY_VIDEO_POSTER.jpg"
-          data-setup="{ 'controls': true, 'autoplay': false, 'preload': 'auto' }">
+      <div class="col-xs-12" style="margin: auto;">
+        <video id="my-video" class="video-js" controls autoplay preload="auto" poster="assets/caver.jpg"
+          data-setup="{}">
           <source src="assets/Roche_5.mp4" type="video/mp4" />
         </video>
         <div class="wrapper">
